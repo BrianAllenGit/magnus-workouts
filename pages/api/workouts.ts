@@ -1,8 +1,9 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
+import moment, { Moment } from 'moment'
 
 type Workout = {
-  date: Date,
+  date: Moment,
   steps: Array<Step>
 }
 
@@ -17,7 +18,7 @@ export default function handler(
 ) {
   const response = [
     {
-      date: new Date(),
+      date: moment(),
       steps: [
         {
           order: "a",
@@ -42,7 +43,7 @@ export default function handler(
       ]
     },
     {
-      date: new Date(),
+      date: moment().subtract(1, 'days'),
       steps: [
         {
           order: "a",
@@ -67,7 +68,7 @@ export default function handler(
       ]
     },
     {
-      date: new Date(),
+      date: moment().subtract(2, 'days'),
       steps: [
         {
           order: "a",
@@ -92,7 +93,7 @@ export default function handler(
       ]
     },
     {
-      date: new Date(),
+      date: moment().subtract(3, 'days'),
       steps: [
         {
           order: "a",
@@ -117,7 +118,7 @@ export default function handler(
       ]
     },
     {
-      date: new Date(),
+      date: moment().subtract(4, 'days'),
       steps: [
         {
           order: "a",
